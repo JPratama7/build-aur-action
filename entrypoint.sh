@@ -11,7 +11,7 @@ Server = https://github.com/JPratama7/arch-builder/releases/download/latest/
 Server = https://git.aya1.top/JPratama7/arch-builder/releases/download/latest/
 Server = https://hub.fastgit.xyz/JPratama7/arch-builder/releases/download/latest/
 EOM
-pacman -Syu --noconfirm --needed yay
+pacman -Syu --noconfirm --needed yay gtk2 gtk3 gtk4
 
 git clone "https://aur.archlinux.org/$1.git"
 
