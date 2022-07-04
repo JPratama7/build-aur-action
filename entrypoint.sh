@@ -21,4 +21,4 @@ mapfile -t PKGDEPS < \
 	<(sed -n -e 's/^[[:space:]]*\(make\)\?depends\(_x86_64\)\? = \([[:alnum:][:punct:]]*\)[[:space:]]*$/\3/p' .SRCINFO)
 yay -Syyu --noconfirm ${PKGDEPS[@]}
 cd "$1"
-makepkg -sf --noconfirm
+makepkg --syncdeps --noconfirm
