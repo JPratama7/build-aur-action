@@ -14,11 +14,11 @@ EOM
 pacman -Syu --noconfirm --needed yay gtk2 gtk3 gtk4
 
 git clone "https://aur.archlinux.org/$1.git"
+cd "$1"
 
 echo "Creating .SRCINFO"
 makepkg --printsrcinfo > .SRCINFO
 mapfile -t PKGDEPS < \
 	<(sed -n -e 's/^[[:space:]]*\(make\)\?depends\(_x86_64\)\? = \([[:alnum:][:punct:]]*\)[[:space:]]*$/\3/p' .SRCINFO)
 yay -Syyu --noconfirm ${PKGDEPS[@]}
-cd "$1"
 makepkg --syncdeps --noconfirm
